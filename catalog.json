@@ -1,0 +1,52 @@
+{
+  "$comment": "Antigravity model catalog verified live on 2026-11-19 against two Google accounts (fetchAvailableModels + a real generateContent / 9router /v1 call per id). Only ids that answered 200 are listed. Regenerate with `node scripts/probe.mjs --emit` instead of hand-editing.",
+  "verifiedAt": "2026-11-19",
+  "verifiedOn": ["google-ai-free", "google-ai-plus", "google-ai-pro"],
+  "upstream": {
+    "generate": "https://daily-cloudcode-pa.googleapis.com/v1internal:generateContent",
+    "availableModels": "https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels",
+    "loadCodeAssist": "https://cloudcode-pa.googleapis.com/v1internal:loadCodeAssist",
+    "project": "aicode-consumers"
+  },
+  "models": [
+    { "id": "gemini-4-hydrogen-sonar", "name": "Gemini 4 Hydrogen (Sonar)" },
+    { "id": "gemini-3.8-flash-high", "name": "Gemini 3.8 Flash (High)", "upstreamModelId": "gemini-3.8-flash-high(high)" },
+    { "id": "gemini-3.8-flash-medium", "name": "Gemini 3.8 Flash (Medium)", "upstreamModelId": "gemini-3.8-flash-medium(medium)" },
+    { "id": "gemini-3.8-flash-low", "name": "Gemini 3.8 Flash (Low)", "upstreamModelId": "gemini-3.8-flash-low(low)" },
+    { "id": "gemini-3.8-flash", "name": "Gemini 3.8 Flash", "upstreamModelId": "gemini-3.8-flash-medium(medium)" },
+    { "id": "gemini-3.8-flash-tiered", "name": "Gemini 3.8 Flash (Auto tier)", "upstreamModelId": "gemini-3.8-flash-tiered(medium)" },
+    { "id": "gemini-3.5-flash-lite", "name": "Gemini 3.5 Flash Lite" },
+    { "id": "gemini-3.1-flash-lite", "name": "Gemini 3.1 Flash Lite" },
+    { "id": "gemini-3-flash", "name": "Gemini 3 Flash" },
+    { "id": "gemini-2.5-flash", "name": "Gemini 2.5 Flash" },
+    { "id": "gemini-2.5-flash-lite", "name": "Gemini 2.5 Flash Lite" },
+    { "id": "gemini-2.5-flash-thinking", "name": "Gemini 2.5 Flash (Thinking)" },
+    { "id": "claude-sonnet-4-6", "name": "Claude Sonnet 4.6 (Thinking)" },
+    { "id": "claude-opus-4-6-thinking", "name": "Claude Opus 4.6 (Thinking)" },
+    { "id": "gpt-oss-120b-medium", "name": "GPT-OSS 120B (Medium)" },
+    { "id": "gemini-3.1-flash-image", "name": "Gemini 3.1 Flash (Image)", "kind": "image", "imageGen": true, "capabilities": ["textToImage"] }
+  ],
+  "dead": [
+    { "id": "gemini-3.6-flash-high", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "gemini-3.6-flash-medium", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "gemini-3.6-flash-low", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "gemini-3.7-flash-high", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "gemini-3.7-flash-medium", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "gemini-3.7-flash-low", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "gemini-3.1-pro-high", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "gemini-3.1-pro-low", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "gemini-pro-agent", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "claude-sonnet-5-5", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "claude-sonnet-5-5-low", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "claude-sonnet-5-5-medium", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "claude-sonnet-5-5-high", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "claude-opus-5-5", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "claude-opus-5-5-low", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "claude-opus-5-5-medium", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "claude-opus-5-5-high", "reason": "404 NOT_FOUND on every account; absent from fetchAvailableModels" },
+    { "id": "gemini-2.5-pro", "reason": "listed in fetchAvailableModels but every call returns MODEL_CAPACITY_EXHAUSTED (error_number 2010) while account quota is >99% — per-model capacity gate, not account quota" },
+    { "id": "gemini-4-argon-*", "reason": "catalog entry is -disabled; bare/tiered forms 404" },
+    { "id": "gemini-4-carbon-*", "reason": "catalog entry is -disabled; bare/tiered forms 404" },
+    { "id": "gemini-4-neon-*", "reason": "catalog entry is -disabled; bare/tiered forms 404" }
+  ]
+}

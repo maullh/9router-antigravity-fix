@@ -1,0 +1,21 @@
+{
+  "name": "9router-antigravity-fix",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Patch 9router's Antigravity provider: only working models in the catalog + prompt rules that stop Google's fake 429 RESOURCE_EXHAUSTED.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22.5" },
+  "bin": {
+    "ag-apply": "scripts/apply.mjs",
+    "ag-probe": "scripts/probe.mjs",
+    "ag-verify": "scripts/verify.mjs"
+  },
+  "scripts": {
+    "apply": "node scripts/apply.mjs",
+    "probe": "node scripts/probe.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "keywords": ["9router", "antigravity", "gemini", "claude-code", "router", "gpt-oss", "llm-gateway"],
+  "files": ["catalog.json", "scripts", "README.md", "LICENSE"]
+}
